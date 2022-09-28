@@ -1,0 +1,40 @@
+Source: coinmp
+Priority: optional
+Maintainer: Debian Science Team <debian-science-maintainers@lists.alioth.debian.org>
+Uploaders: Rene Engelhard <rene@debian.org>
+Build-Depends: debhelper (>= 9.0.0), autotools-dev, coinor-libcoinutils-dev, coinor-libosi-dev, coinor-libcbc-dev, coinor-libcgl-dev, coinor-libclp-dev, pkg-config
+Standards-Version: 3.9.3
+Section: libs
+Homepage: https://projects.coin-or.org/CoinMP
+
+Package: coinor-libcoinmp-dev
+Section: libdevel
+Architecture: any
+Depends: coinor-libcoinmp1v5 (= ${binary:Version}), coinor-libcbc-dev, ${misc:Depends}
+Multi-Arch: same
+Description: Simple C API for COIN-OR Solvers Clp and Cbc -- development
+ The Coin-MP optimizer is an open source solver, it is part of the COIN-OR
+ project which is an initiative to spur the development of open-source software
+ for the operations research community.
+ .
+ CoinMP is a C-API library that supports most of the functionality of CLP
+ (Coin LP), CBC (Coin Branch-and-Cut), and CGL (Cut Generation Library)
+ projects.
+ .
+ This package contains the files needed to build applications using libCoinMP.
+
+Package: coinor-libcoinmp1v5
+Section: libs
+Architecture: any
+Multi-Arch: same
+Depends: ${shlibs:Depends}, ${misc:Depends}
+Conflicts: coinor-libcoinmp1
+Description: Simple C API for COIN-OR Solvers Clp and Cbc -- library
+ The Coin-MP optimizer is an open source solver, it is part of the COIN-OR
+ project which is an initiative to spur the development of open-source software
+ for the operations research community.
+ .
+ CoinMP is a C-API library that supports most of the functionality of CLP
+ (Coin LP), CBC (Coin Branch-and-Cut), and CGL (Cut Generation Library)
+ projects.
+

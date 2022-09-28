@@ -1,0 +1,58 @@
+coinmp (1.8.3-3) unstable; urgency=medium
+
+  * add patch from Chris Lamb to not install
+    /usr/share/doc/coinor-libcoinmp-dev/examples/Makefile
+    (closes: #908480)
+
+ -- Rene Engelhard <rene@debian.org>  Sun, 21 Jun 2020 02:00:03 +0200
+
+coinmp (1.8.3-2) unstable; urgency=medium
+
+  * upload to unstable
+
+  * fix COIN_SKIP_PROJECTS setting
+
+ -- Rene Engelhard <rene@debian.org>  Sun, 27 Aug 2017 12:42:17 +0000
+
+coinmp (1.8.3-1) experimental; urgency=medium
+
+  * "New" upstream release
+  
+  * use dh compat 9
+  * extra -> optional
+  * remove manual rm -rf of "skipped" modules since it confuses dh_clean
+
+ -- Rene Engelhard <rene@debian.org>  Sun, 27 Aug 2017 09:44:02 +0000
+
+coinmp (1.7.6+dfsg1-2) unstable; urgency=medium
+
+  * libstdc+6 transition: rename coinor-libcoinmp1 to coinor-libcoinmp1v5
+
+ -- Rene Engelhard <rene@debian.org>  Fri, 18 Sep 2015 17:35:12 +0200
+
+coinmp (1.7.6+dfsg1-1) unstable; urgency=low
+
+  * actually remove CoinMP/CoinMP.zip
+
+ -- Rene Engelhard <rene@debian.org>  Fri, 03 Oct 2014 12:18:17 +0200
+
+coinmp (1.7.6-3) unstable; urgency=low
+
+  * brown paper bag release
+  * fix libdir for !amd64 ...
+
+  * install examples
+
+ -- Rene Engelhard <rene@debian.org>  Tue, 30 Sep 2014 15:38:01 +0200
+
+coinmp (1.7.6-2) unstable; urgency=low
+
+  * add missing build-dependency on pkg-config... 
+
+ -- Rene Engelhard <rene@debian.org>  Mon, 22 Sep 2014 15:30:05 +0000
+
+coinmp (1.7.6-1) unstable; urgency=low
+
+  * Initial release (closes: #549409)
+
+ -- Rene Engelhard <rene@debian.org>  Wed, 06 Aug 2014 18:58:23 +0200

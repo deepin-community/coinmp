@@ -1,0 +1,22 @@
+#!/usr/bin/make -f
+#export DH_VERBOSE=1
+
+%:
+	dh $@ --with autotools-dev
+
+override_dh_auto_clean:
+	find CoinMP/test -name "*.mps.gz" -exec rm {} \;
+	dh_auto_clean
+
+override_dh_auto_configure:
+	export COIN_SKIP_PROJECTS="Sample"; \
+	dh_auto_configure -- --libdir=/usr/lib/$(DEB_HOST_MULTIARCH) \
+		--enable-dependency-linking \
+		$(foreach p, coinutils osi clp cgl cbc, --with-$(p)-incdir=/usr/include/coin) \
+		$(foreach p, coinutils osi clp cgl cbc, --with-$(p)-libdir=/usr/lib/$(DEB_HOST_MULTIARCH)) \
+		$(foreach p, coinutils osi clp cgl cbc, --with-$(p)-lib=$(shell pkg-config --libs $(p) | cut -d" " -f1))
+
+override_dh_installexamples:
+	dh_installexamples
+	rm -f debian/*/usr/share/doc/coinor-libcoinmp-dev/examples/Makefile
+
