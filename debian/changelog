@@ -1,3 +1,9 @@
+coinmp (1.8.3-3deepin0) unstable; urgency=medium
+
+  * No source change upload against GCC 12.
+
+ -- Tianyu Chen <sweetyfish@deepin.org>  Thu, 19 Sep 2024 22:43:40 +0800
+
 coinmp (1.8.3-3) unstable; urgency=medium
 
   * add patch from Chris Lamb to not install
